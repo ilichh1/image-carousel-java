@@ -1,5 +1,6 @@
 *.DS_STORE
 *MAC*
-nbproject
-nbproject/
-nbproject/*
+build
+# nbproject
+# nbproject/
+# nbproject/*
