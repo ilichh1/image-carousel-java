@@ -57,6 +57,7 @@ public class Imagenes extends javax.swing.JFrame {
         String sqlSelect = "SELECT * FROM imagen;";
         
         ResultSet rs = database.BaseDeDatos.executeSqlAndGetResultSet(sqlSelect);
+        if (rs == null) return;
         
         try {
             while (rs.next()) {

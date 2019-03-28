@@ -66,8 +66,18 @@ public class BaseDeDatos {
     }
     
     public static ResultSet executeSqlAndGetResultSet(String sql) {
+        Statement stmt = null;
+        
+        if (CONEXION_DB == null) return null;
+        
         try {
-            Statement stmt = initConnection().createStatement();
+            stmt = CONEXION_DB.createStatement();
+        } catch (SQLException ex) {
+            System.out.println("NO HAY CONEXION A LA BD.");
+            return null;
+        }
+        
+        try {
             stmt.execute(sql);
             return stmt.getResultSet();
         } catch (SQLException ex) {
