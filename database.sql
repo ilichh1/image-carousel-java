@@ -1,0 +1,8 @@
+CREATE DATABASE imagenes;
+USE imagenes;
+
+CREATE TABLE imagen (
+  idImagen INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(128) NOT NULL,
+  datos BLOB NOT NULL
+);
